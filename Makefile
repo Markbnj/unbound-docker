@@ -4,19 +4,19 @@ TAG ?= $(shell git rev-parse --short HEAD)
 
 default: all
 
-.PHONY image
+.PHONY: image
 image:
 	docker build --rm --force-rm --tag $(IMAGE):$(TAG) .
 
-.PHONY tag
+.PHONY: tag
 tag:
 	docker tag $(IMAGE):$(TAG) $(REPO)/$(IMAGE):$(TAG)
 	docker tag $(IMAGE):$(TAG) $(REPO)/$(IMAGE):latest
 
-.PHONY push
+.PHONY: push
 push:
 	docker push $(IMAGE):$(TAG) $(REPO)/$(IMAGE):$(TAG)
 	docker push $(IMAGE):$(TAG) $(REPO)/$(IMAGE):latest
 
-.PHONY all
+.PHONY: all
 all: image tag push
