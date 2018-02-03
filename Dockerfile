@@ -1,7 +1,7 @@
 FROM alpine:latest
 
 # Install unbound
-RUN echo "http://dl-4.alpinelinux.org/alpine/edge/community/" >> /etc/apk/repositories && \
+RUN echo "http://dl-4.alpinelinux.org/alpine/latest-stable/main/" >> /etc/apk/repositories && \
     apk add --update unbound bash bind-tools && \
     rm -rf /tmp/* /var/tmp/* /var/cache/apk/*
 
