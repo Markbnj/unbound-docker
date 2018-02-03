@@ -15,8 +15,8 @@ tag:
 
 .PHONY: push
 push:
-	docker push $(IMAGE):$(TAG) $(REPO)/$(IMAGE):$(TAG)
-	docker push $(IMAGE):$(TAG) $(REPO)/$(IMAGE):latest
+	docker push $(REPO)/$(IMAGE):$(TAG)
+	docker push $(REPO)/$(IMAGE):latest
 
 .PHONY: all
 all: image tag push
